@@ -4,16 +4,16 @@ const Navbar = () => {
   const Navlinks = (
     <>
       <li>
-        <Link to="">Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="">Fiashcard</Link>
+        <Link to="">Flashcard</Link>
       </li>
       <li>
-        <Link to="">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </li>
       <li>
-        <Link to="">FAQ</Link>
+        <Link to="/faq">FAQ</Link>
       </li>
       <li></li>
     </>

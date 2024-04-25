@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hook/useAxiosPublic";
 import useAuth from "../../Hook/useAuth";
 import Googlelogin from "../SocialLogin/GoogleLogin";
-
+import signup from "../../assets/images/authentication.gif";
 const SignUp = () => {
   const axiosPublic = useAxiosPublic();
   const {
@@ -56,7 +56,7 @@ const SignUp = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col rounded-xl lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <img src="signup" alt="" />
+            <img src={signup} alt="" />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">

@@ -6,6 +6,7 @@ import SignUp from "../Authentication/Singnup/Signup";
 import Home from "../Pages/Home/Home/Home";
 import FaqPage from "../Pages/Home/Faq/FaqPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import Contact from "../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -29,35 +30,10 @@ export const router = createBrowserRouter([
         path: "/faq",
         element: <FaqPage></FaqPage>,
       },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
     ],
   },
-  // {
-  //   path: "dashboard",
-  //   element: (
-  //     <PrivateRoute>
-  //       <SidebarDeshboad></SidebarDeshboad>
-  //     </PrivateRoute>
-  //   ),
-  //   children: [
-  //     {
-  //       path: "dashboard/manageitem",
-  //       element: <DnsManage></DnsManage>,
-  //     },
-  //     {
-  //       path: "product",
-  //       element: <Products></Products>,
-  //     },
-  //     {
-  //       path: "dashboard/addItems",
-  //       element: <AddItems></AddItems>,
-  //     },
-
-  //     {
-  //       path: "updateItem/:id",
-  //       element: <UpdateItem></UpdateItem>,
-  //       loader: ({ params }) =>
-  //         fetch(`https://dns-sever.vercel.app/product/${params.id}`),
-  //     },
-  //   ],
-  // },
 ]);
