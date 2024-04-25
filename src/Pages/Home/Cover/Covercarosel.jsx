@@ -1,23 +1,36 @@
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export const Covercarosel = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
-  // The slider images array
+  const [activeTab, setActiveTab] = useState(1);
+
   const sliderImages = [
-    "https://source.unsplash.com/500x500/?nature/?1",
-    "https://source.unsplash.com/500x500/?nature/?3",
-    "https://source.unsplash.com/500x500/?nature/?5",
-    "https://source.unsplash.com/500x500/?nature/?2",
-    "https://source.unsplash.com/500x500/?nature/?4",
+    "https://i.ibb.co/GQ1TnkJ/1.png",
+    "https://i.ibb.co/txBfZhz/2.png",
+    "https://i.ibb.co/LC94KpD/3.png",
+    " https://i.ibb.co/MCYgNLw/4.png",
+    "https://i.ibb.co/sW9BWy4/5.png",
   ];
+  //   https://i.ibb.co/MCYgNLw/4.png
+  // https://i.ibb.co/sW9BWy4/5.png
+  // https://i.ibb.co/GQ1TnkJ/1.png
+  // https://i.ibb.co/txBfZhz/2.png
+  // https://i.ibb.co/LC94KpD/3.png
+
+  const handleTabChange = (index) => {
+    setActiveTab(index);
+    setCurrentSlider(index - 1);
+  };
+
   const prevSlider = () => {
-    setCurrentSlider((currentSlider) =>
-      currentSlider === 0 ? sliderImages.length - 1 : currentSlider - 1
+    setCurrentSlider((prevSlider) =>
+      prevSlider === 0 ? sliderImages.length - 1 : prevSlider - 1
     );
   };
+
   const nextSlider = useCallback(() => {
-    setCurrentSlider((currentSlider) =>
-      currentSlider === sliderImages.length - 1 ? 0 : currentSlider + 1
+    setCurrentSlider((prevSlider) =>
+      prevSlider === sliderImages.length - 1 ? 0 : prevSlider + 1
     );
   }, [sliderImages.length]);
 
@@ -31,69 +44,39 @@ export const Covercarosel = () => {
   return (
     <div>
       {/* --------tabs-------- */}
-      <div>
-        <div role="tablist" className="tabs tabs-bordered">
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className="tab"
-            aria-label="Study"
-          />
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 1
-          </div>
-
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className="tab"
-            aria-label="Quiz"
-            checked
-          />
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 2
-          </div>
-
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className="tab"
-            aria-label="Test"
-          />
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 3
-          </div>
-
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className="tab"
-            aria-label="Game"
-          />
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 4
-          </div>
-
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className="tab"
-            aria-label="other"
-          />
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 5
-          </div>
-        </div>
+      <div role="tablist" className="tabs  tabs-bordered">
+        {sliderImages.map((_, index) => (
+          <React.Fragment key={index}>
+            <input
+              type="radio"
+              name="my_tabs_1"
+              role="tab"
+              className="tab"
+              aria-label={
+                index === 0
+                  ? "Study"
+                  : index === 1
+                  ? "Quiz"
+                  : index === 2
+                  ? "Test"
+                  : index === 3
+                  ? "Game"
+                  : "Other"
+              }
+              checked={activeTab === index + 1}
+              onChange={() => handleTabChange(index + 1)}
+            />
+            {/* <div role="tabpanel" className="tab-content p-10">
+              Tab content {index + 1}
+            </div> */}
+          </React.Fragment>
+        ))}
       </div>
+
       <div className="grid justify-center ">
         {/* arrow left */}
 
-        <div className="w-full max-w-72 overflow-hidden">
+        <div className="w-full max-w-96 overflow-hidden">
           {/* slider container */}
           <div
             className="flex transform-gpu duration-500 ease-linear"
@@ -102,8 +85,8 @@ export const Covercarosel = () => {
             {/* sliders */}
             {sliderImages.map((slide, inx) => (
               <img
-                width={500}
-                height={500}
+                width={800}
+                height={700}
                 key={inx}
                 src={slide}
                 className="mx-[2.5%] h-full min-w-[95%] rounded-2xl border-8 border-transparent object-cover"
@@ -139,9 +122,10 @@ export const Covercarosel = () => {
               </g>
             </svg>
           </button>
-          <h2>
+          {/* --------count ---------- */}
+          <h2 className="text-2xl">
             {" "}
-            {currentSlider + 1}/{sliderImages.length}
+            0{currentSlider + 1}/{sliderImages.length}
           </h2>{" "}
           {/* arrow right */}
           <button

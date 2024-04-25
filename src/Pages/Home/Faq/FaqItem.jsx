@@ -1,6 +1,6 @@
 const FaqItem = ({ question, answer }) => {
   return (
-    <div className="border-1 border-green-500">
+    <div className="collapse collapse-arrow bg-base-200">
       <div className="py-5  p-2 shadow-md">
         <details className="group">
           <summary className="flex justify-between items-center font-medium cursor-pointer list-none">

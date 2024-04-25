@@ -4,7 +4,7 @@ import { Covercarosel } from "./Covercarosel";
 const Cover = () => {
   return (
     <div>
-      <div className="flex mt-28 items-center text-2xl">
+      <div className="flex mt-6 items-center text-2xl">
         <GoHome />
         <MdOutlineNavigateNext />
         <h1>Flashcard</h1>
@@ -14,11 +14,11 @@ const Cover = () => {
         <h1>Relation and Function</h1>
       </div>
       <div className="">
-        <h1 className="mt-20 text-3xl text-[#06286E]">
+        <h1 className="mt-6 text-3xl text-[#06286E]">
           Relations and Functions ( Mathematics )
         </h1>
       </div>
-      <div className="mt-28">
+      <div className="mt-8">
         <Covercarosel></Covercarosel>
       </div>
     </div>

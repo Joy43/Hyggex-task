@@ -19,13 +19,13 @@ const FaqPage = () => {
     },
   ];
   return (
-    <div className="max-w-screen-xl mx-auto px-5 bg-white min-h-screen">
+    <div className=" mx-auto px-5 bg-white">
       <div className="flex flex-col">
         <h2 className="font-bold text-[#06286E] text-5xl mt-5 tracking-tight">
           FAQ
         </h2>
       </div>
-      <div className="grid  gap-3  mt-8">
+      <div className="grid  gap-4  mt-8">
         {faqData.map((faq, index) => (
           <FaqItem key={index} question={faq.question} answer={faq.answer} />
         ))}
