@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         element: <AddFlashcard></AddFlashcard>,
       },
       {
-        path: "/flash",
+        path: "flash",
         element: <FlashCard></FlashCard>,
       },
     ],
