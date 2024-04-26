@@ -14,7 +14,7 @@ const Cover = () => {
         <h1>Relation and Function</h1>
       </div>
       <div className="">
-        <h1 className="mt-6 text-3xl text-[#06286E]">
+        <h1 className="mt-6 text-3xl font-semibold text-[#3032b6]">
           Relations and Functions ( Mathematics )
         </h1>
       </div>
