@@ -7,6 +7,8 @@ import Home from "../Pages/Home/Home/Home";
 import FaqPage from "../Pages/Home/Faq/FaqPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Contact from "../Pages/Contact/Contact";
+import AddFlashcard from "../Pages/FlashCard/AddFlashcard";
+import FlashCard from "../Pages/FlashCard/FlashCard";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/flashcard",
+        element: <AddFlashcard></AddFlashcard>,
+      },
+      {
+        path: "/flash",
+        element: <FlashCard></FlashCard>,
       },
     ],
   },

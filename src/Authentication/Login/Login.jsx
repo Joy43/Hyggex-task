@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import useAuth from "../../Hook/useAuth";
 import Googlelogin from "../SocialLogin/GoogleLogin";
-
+import login from "../../assets/images/authentication.gif";
 const Login = () => {
   const { signIn } = useAuth();
   const location = useLocation();
@@ -54,7 +54,7 @@ const Login = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <img className="" src="" alt="login" />
+            <img className="" src={login} alt="login" />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">

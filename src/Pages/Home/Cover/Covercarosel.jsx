@@ -11,11 +11,6 @@ export const Covercarosel = () => {
     " https://i.ibb.co/MCYgNLw/4.png",
     "https://i.ibb.co/sW9BWy4/5.png",
   ];
-  //   https://i.ibb.co/MCYgNLw/4.png
-  // https://i.ibb.co/sW9BWy4/5.png
-  // https://i.ibb.co/GQ1TnkJ/1.png
-  // https://i.ibb.co/txBfZhz/2.png
-  // https://i.ibb.co/LC94KpD/3.png
 
   const handleTabChange = (index) => {
     setActiveTab(index);

@@ -1,5 +1,7 @@
 import hygraph from "../../../assets/logo/hygraph.png";
 import { FaSquarePlus } from "react-icons/fa6";
+
+import { Link } from "react-router-dom";
 const Published = () => {
   return (
     <div className="flex justify-between">
@@ -16,10 +18,15 @@ const Published = () => {
       </div>
       {/* -------- flashcard-------*/}
       <div className="flex  items-center">
-        <p className="btn btn-outline text-2xl btn-primary">
-          {" "}
-          <FaSquarePlus></FaSquarePlus>Create Flashcard
-        </p>
+        <Link to="/flashcard">
+          <button
+            className="btn btn-outline text-2xl btn-primary"
+            // onClick={() => document.getElementById("my_modal_4").showModal()}
+          >
+            {" "}
+            <FaSquarePlus></FaSquarePlus>Create Flashcard
+          </button>
+        </Link>
       </div>
     </div>
   );
