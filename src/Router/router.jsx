@@ -9,6 +9,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Contact from "../Pages/Contact/Contact";
 import AddFlashcard from "../Pages/FlashCard/AddFlashcard";
 import FlashCard from "../Pages/FlashCard/FlashCard";
+import PrivateRoute from "./PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/flashcard",
-        element: <AddFlashcard></AddFlashcard>,
+        element: (
+          <PrivateRoute>
+            <AddFlashcard></AddFlashcard>
+          </PrivateRoute>
+        ),
       },
       {
         path: "flash",

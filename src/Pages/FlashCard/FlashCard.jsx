@@ -2,11 +2,28 @@ import { useEffect, useState } from "react";
 
 const FlashCard = () => {
   const [flashcard, setflashcard] = useState([]);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     fetch("https://bistro-boss-server-with-cart-part-4.vercel.app/task")
-      .then((res) => res.json())
-      .then((data) => setflashcard(data));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setflashcard(data);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  console.log(flashcard);
   return (
     <div className="grid lg:grid-cols-2 gap-3 p-4 sm:grid-cols-1 ">
       {flashcard.map((flash, index) => (
